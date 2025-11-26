@@ -108,7 +108,7 @@
         "format": "<span foreground='#959595'>{icon}</span> {format_source} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": "󰂲 {icon} {format_source}",
-        "format-muted": "<span foreground='#959595'>󰝟 </span>  {format_source}",
+        "format-muted": "<span foreground='#959595'>󰝟</span> {format_source}",
         "format-source": "{volume}% <span foreground='#959595'></span>",
         "format-source-muted": "<span foreground='#959595'></span>",
         "format-icons": {
