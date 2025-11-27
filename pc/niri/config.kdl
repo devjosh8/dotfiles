@@ -52,9 +52,10 @@ input {
     mouse {
         // off
         // natural-scroll
-        accel-speed 0.1
+        accel-speed 0.5
         accel-profile "flat"
         // scroll-method "no-scroll"
+
     }
 
     trackpoint {
@@ -93,10 +94,16 @@ output "DP-2" {
 }
 
 output "DP-1" {
-    mode "1920x1080@60.000"
+    mode "1920x1080@165.003"
     position x=0 y=275
 }
 
+
+gestures {
+    hot-corners {
+      off
+    } 
+}
 
 
 layout {
@@ -260,7 +267,10 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
+spawn-sh-at-startup "env LC_TIME=de_DE.UTF-8 waybar"
+
+spawn-sh-at-startup "swaybg -i /home/josh/Pictures/Wallpaper/trees_and_fog.jpg -m fill"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -338,6 +348,14 @@ window-rule {
     clip-to-geometry true
 }
 
+
+// Window Rule für Ghostty
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    draw-border-with-background false
+    opacity 0.9
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -354,7 +372,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+B hotkey-overlay-title="Open Browser" { spawn "firefox"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Alt+Space hotkey-overlay-title="Run Rofi" { spawn-sh "rofi -show drun"; }
@@ -390,8 +408,8 @@ binds {
     Mod+X repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }
