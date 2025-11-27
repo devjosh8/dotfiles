@@ -72,8 +72,8 @@
         },
         "format": "<span foreground='#959595'>{icon}</span> {capacity}%",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "<span foreground='#959595'>󰢝</span>{capacity}% ",
-        "format-plugged": "<span foreground='#959595'>󰚥</span>{capacity}% ",
+        "format-charging": "<span foreground='#959595'>󰢝 </span>{capacity}% ",
+        "format-plugged": "<span foreground='#959595'>󰚥 </span>{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -105,10 +105,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span foreground='#959595'>{icon}</span> {format_source} {volume}%",
+        "format": "<span foreground='#959595'>{icon}</span> {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": "󰂲 {icon} {format_source}",
-        "format-muted": "<span foreground='#959595'>󰝟</span> {format_source}",
+          "format-muted": "<span foreground='#959595'>󰝟 </span> {format_source}",
         "format-source": "{volume}% <span foreground='#959595'></span>",
         "format-source-muted": "<span foreground='#959595'></span>",
         "format-icons": {
@@ -118,7 +118,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
     },
